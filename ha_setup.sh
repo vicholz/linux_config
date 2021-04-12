@@ -1,6 +1,15 @@
 #!/bin/bash
 
-sudo apt upgrade -y
+# check if root user | re-run if not
+if [ "$(id -u)" != "0" ]; then
+	sudo `dirname $0`/`basename $0`
+	exit
+fi
+
+# update
+apt update
+
+# install packages
 sudo apt install -y \
 	python3 \
 	python3-dev \

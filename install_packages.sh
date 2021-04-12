@@ -42,7 +42,6 @@ apt -y install \
   dos2unix \
   p7zip-full \
   unace \
-  ntfs-config \
   ntfs-3g \
   lrzip \
   dnsutils \

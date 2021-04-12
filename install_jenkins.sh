@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # check if root user | re-run if not
@@ -21,4 +20,5 @@ sudo apt update
 # install packages
 sudo apt install -y \
   openjdk-11-jdk \
+  mailutils \
   jenkins

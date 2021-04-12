@@ -36,4 +36,4 @@ sudo apt install -y \
 	network-manager-gnome \
 	socat
 
-sudo curl -sL "https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh" | bash -s -- -m aarch64
+sudo curl -sL "https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh" && bash installer.sh -m raspberrypi4-64

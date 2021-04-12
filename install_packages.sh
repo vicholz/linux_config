@@ -9,6 +9,9 @@ fi
 # update
 apt update
 
+# upgrade existing
+apt upgrade -y
+
 # install packages
 apt -y install \
   bat \

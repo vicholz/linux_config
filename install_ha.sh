@@ -11,6 +11,8 @@ apt update
 
 # install packages
 sudo apt install -y \
+	docker \
+	docker-compose \
 	python3 \
 	python3-dev \
 	python3-venv \

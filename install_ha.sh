@@ -7,7 +7,7 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 # update
-apt update
+sudo apt update
 
 # install packages
 sudo apt install -y \

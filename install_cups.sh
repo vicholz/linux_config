@@ -14,6 +14,7 @@ sudo apt install -y \
     cups \
     cups-ipp-utils \
     printer-driver-gutenprint \
+    printer-driver-brlaser \
     avahi-daemon
 sudo systemctl start cups
 sudo systemctl enable cups
@@ -24,5 +25,11 @@ sed -i 's/Order allow,deny/Order allow,deny\n  Allow @LOCAL/g' /tmp/cupsd.conf
 sudo systemctl start avahi-daemon
 sudo systemctl enable avahi-daemon
 sudo ufw allow 5353/udp
+
+# install rollo driver
+wget https://www.rollo.com/driver-dl/beta/rollo-driver-raspberrypi-beta.zip -O /tmp/rollo.zip
+unzip /tmp/rollo.zip -d /tmp/rollo
+chmod a+x /tmp/rollo/install.run
+/tmp/rollo/install.run
 
 sudo systemctl restart cups

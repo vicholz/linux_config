@@ -12,6 +12,7 @@ bash <(curl $RAW_URL_FOR_SCRIPT)
 ## Commands
 ```bash
 bash <(curl https://raw.githubusercontent.com/vicholz/rpi4_config/main/install_packages.sh)
+bash <(curl https://raw.githubusercontent.com/vicholz/rpi4_config/main/install_media.sh)
 bash <(curl https://raw.githubusercontent.com/vicholz/rpi4_config/main/install_jenkins.sh)
 bash <(curl https://raw.githubusercontent.com/vicholz/rpi4_config/main/install_cups.sh)
 bash <(curl https://raw.githubusercontent.com/vicholz/rpi4_config/main/install_ha.sh)

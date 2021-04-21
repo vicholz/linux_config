@@ -11,6 +11,7 @@ sudo apt update
 
 # install packages
 sudo apt install -y \
+    ufw \
     cups \
     cups-ipp-utils \
     printer-driver-gutenprint \

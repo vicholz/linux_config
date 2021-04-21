@@ -14,7 +14,6 @@ apt upgrade -y
 
 # install packages
 apt -y install \
-  bat \
   tldr \
   openjdk-11-jdk \
   ant \

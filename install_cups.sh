@@ -24,3 +24,5 @@ sed -i 's/Order allow,deny/Order allow,deny\n  Allow @LOCAL/g' /tmp/cupsd.conf
 sudo systemctl start avahi-daemon
 sudo systemctl enable avahi-daemon
 sudo ufw allow 5353/udp
+
+sudo systemctl restart cups

@@ -25,8 +25,6 @@ apt -y install \
   xmlstarlet \
   jparse \
   i2c-tools \
-  samba \
-  smbclient \
   vsftpd \
   build-essential \
   bin86 \
@@ -50,8 +48,6 @@ apt -y install \
   docker \
   acl \
   ufw \
-  minidlna \
-  cups \
   rng-tools
 
 # install fortune

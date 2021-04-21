@@ -51,7 +51,8 @@ apt -y install \
   acl \
   ufw \
   minidlna \
-  cups
+  cups \
+  rng-tools
 
 # install fortune
 if ! grep -e "/usr/games/fortune" /etc/bash.bashrc 1> /dev/null; then

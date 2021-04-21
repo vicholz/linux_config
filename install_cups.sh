@@ -18,7 +18,7 @@ sudo apt install -y \
 sudo systemctl start cups
 sudo systemctl enable cups
 sudo ufw allow cups
-sed -e -i 's/Order allow,deny/Order allow,deny\n  Allow @LOCAL/g' /tmp/cupsd.conf
+sed -i 's/Order allow,deny/Order allow,deny\n  Allow @LOCAL/g' /tmp/cupsd.conf
 
 # setup avahi
 sudo systemctl start avahi-daemon

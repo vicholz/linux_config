@@ -2,7 +2,7 @@
 
 # check if root user | re-run if not
 if [ "$(id -u)" != "0" ]; then
-	sudo `dirname $0`/`basename $0`
+	sudo !!
 	exit
 fi
 

@@ -36,4 +36,4 @@ sudo apt install -y \
 	socat
 	
 curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh
-curl -sL "https://raw.githubusercontent.com/vicholz/supervised-installer/master/installer.sh" -o ha_installer.sh && sudo bash ha_installer.sh -m raspberrypi4-32
+curl -sL "https://raw.githubusercontent.com/vicholz/supervised-installer/master/installer.sh" -o ha_installer.sh && sudo bash ha_installer.sh -m raspberrypi4

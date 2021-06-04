@@ -1,0 +1,6 @@
+[all]
+ hdmi_drive=2
+ hdmi_group=2
+ hdmi_mode=82
+ hdmi_force_hotplug=1
+ max_usb_current=1

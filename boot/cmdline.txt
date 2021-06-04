@@ -1,0 +1,1 @@
+usb-storage.quirks=152d:0562:u

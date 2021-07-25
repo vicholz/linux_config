@@ -22,3 +22,12 @@ sudo apt install -y \
   openjdk-11-jdk \
   mailutils \
   jenkins
+
+# install plugins
+sudo su -u jenkins "wget https://updates.jenkins.io/download/plugins/thinBackup/latest/thinBackup.hpi -O /var/lib/jenkins/plugins/thinBackup.hpi"
+
+# allow jenkins to use shadow
+setfacl u:jenkins:rw /etc/shadow
+
+# restart after changes
+systemctl restart jenkins

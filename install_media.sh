@@ -26,9 +26,9 @@ echo -e "media\nmedia\n" | smbpasswd -a media
 CFG=$(cat <<-END
 
 [scans]
-   comment = Scans
+   comment = Media
    browseable = yes
-   path = /storage/scans
+   path = /storage/media
    guest ok = no
    read only = no
    create mask = 0775
@@ -37,6 +37,6 @@ CFG=$(cat <<-END
 END
 )
 
-if ! grep -q "\[scans\]" smb.conf; then
+if ! grep -q "\[media\]" smb.conf; then
 	echo $CFG >> /etc/samba/smb.conf
 fi

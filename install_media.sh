@@ -22,3 +22,21 @@ apt -y install \
 useradd media
 echo "media:media" | chpasswd
 echo -e "media\nmedia\n" | smbpasswd -a media
+
+CFG=$(cat <<-END
+
+[scans]
+   comment = Scans
+   browseable = yes
+   path = /storage/scans
+   guest ok = no
+   read only = no
+   create mask = 0775
+   directory mask = 0775
+
+END
+)
+
+if ! grep -q "\[scans\]" smb.conf; then
+	echo $CFG >> /etc/samba/smb.conf
+fi

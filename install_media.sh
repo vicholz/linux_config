@@ -21,4 +21,4 @@ apt -y install \
 
 useradd media
 echo "media:media" | chpasswd
-echo -e "media\nmedia\n" | smbpasswd -a scans
+echo -e "media\nmedia\n" | smbpasswd -a media

@@ -18,3 +18,7 @@ apt -y install \
     samba-client \
     minidlna \
     avahi-daemon
+
+useradd media
+echo "media:media" | chpasswd
+echo -e "media\nmedia\n" | smbpasswd -a scans

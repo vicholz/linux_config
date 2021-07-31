@@ -34,3 +34,7 @@ chmod a+x /tmp/rollo/install.run
 /tmp/rollo/install.run
 
 sudo systemctl restart cups
+
+useradd scans
+echo "scans:scans" | chpasswd
+echo -e "scans\nscans\n" | smbpasswd -a scans

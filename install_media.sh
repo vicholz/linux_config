@@ -37,6 +37,6 @@ CFG=$(cat <<-END
 END
 )
 
-if ! grep -q "\[media\]" smb.conf; then
+if ! grep -q "\[media\]" /etc/samba/smb.conf; then
 	echo $CFG >> /etc/samba/smb.conf
 fi

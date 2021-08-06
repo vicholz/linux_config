@@ -27,7 +27,8 @@ sudo apt install -y \
 sudo su -u jenkins "wget https://updates.jenkins.io/download/plugins/thinBackup/latest/thinBackup.hpi -O /var/lib/jenkins/plugins/thinBackup.hpi"
 
 # allow jenkins to use shadow
-setfacl -m u:jenkins:r /etc/shadow
+#setfacl -m u:jenkins:r /etc/shadow
+addgroup jenkins shadow
 
 # restart after changes
 systemctl restart jenkins

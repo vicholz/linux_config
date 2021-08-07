@@ -14,7 +14,6 @@ apt upgrade -y
 
 # install packages
 apt -y install \
-  tldr \
   openjdk-11-jdk \
   ant \
   maven \
@@ -22,7 +21,6 @@ apt -y install \
   xml2 \
   xml-twig-tools \
   xmlstarlet \
-  jparse \
   i2c-tools \
   build-essential \
   bin86 \

@@ -33,6 +33,7 @@ wget https://raw.githubusercontent.com/vicholz/rtmp_restreamer/master/lib/system
 # add rtmp config to nginx
 wget https://raw.githubusercontent.com/vicholz/rtmp_restreamer/master/usr/share/nginx/modules-available/rtmp-restreamer.conf -O /usr/share/nginx/modules-available/rtmp-restreamer.conf.tmpl
 cp /usr/share/nginx/modules-available/rtmp-restreamer.conf.tmpl /usr/share/nginx/modules-available/rtmp-restreamer.conf
+ln -s /usr/share/nginx/modules-available/rtmp-restreamer.conf /etc/nginx/modules-enabled/50-rtmp-restreamer.conf
 
 # add stunnel4 configs
 wget https://raw.githubusercontent.com/vicholz/rtmp_restreamer/master/etc/default/stunnel4 -O /etc/default/stunnel4

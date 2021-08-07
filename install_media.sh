@@ -19,9 +19,13 @@ apt -y install \
     minidlna \
     avahi-daemon
 
+
+addgroup storage || true
 useradd media
 echo "media:media" | chpasswd
 echo -e "media\nmedia\n" | smbpasswd -a media
+mkdir -p /storage/media
+chown media:storage /storage/media
 
 CFG=$(cat <<-END
 

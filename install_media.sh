@@ -25,7 +25,7 @@ echo -e "media\nmedia\n" | smbpasswd -a media
 
 CFG=$(cat <<-END
 
-[scans]
+[media]
    comment = Media
    browseable = yes
    path = /storage/media

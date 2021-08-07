@@ -25,7 +25,7 @@ addgroup media storage
 echo "media:media" | chpasswd
 echo -e "media\nmedia\n" | smbpasswd -a media
 mkdir -p /storage/media
-chown media:storage /storage/media
+chown media:media /storage/media
 
 CFG=$(cat <<-END
 
@@ -35,8 +35,8 @@ CFG=$(cat <<-END
    path = /storage/media
    guest ok = no
    read only = no
-   create mask = 0775
-   directory mask = 0775
+   create mask = 0755
+   directory mask = 0755
 
 END
 )

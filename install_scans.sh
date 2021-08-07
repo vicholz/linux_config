@@ -24,6 +24,7 @@ echo "scans:scans" | chpasswd
 echo -e "scans\scans\n" | smbpasswd -a media
 mkdir -p /storage/scans
 chown scans:scans /storage/scans
+chmod -R 0700 /storage/scans
 
 CFG=$(cat <<-END
 [scans]

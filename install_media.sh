@@ -25,7 +25,8 @@ addgroup media storage
 echo "media:media" | chpasswd
 echo -e "media\nmedia\n" | smbpasswd -a media
 mkdir -p /storage/media
-chown media:media /storage/media
+chown -R media:media /storage/media
+chmod -R 0755 /storage/media
 
 CFG=$(cat <<-END
 

@@ -9,9 +9,6 @@ fi
 # update
 apt update
 
-# upgrade existing
-apt upgrade -y
-
 # install packages
 apt -y install \
   openjdk-11-jdk \

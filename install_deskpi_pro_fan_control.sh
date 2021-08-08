@@ -27,3 +27,4 @@ chmod a+x /opt/tools/deskpi_pro_fan_control.py
 wget https://raw.githubusercontent.com/vicholz/rpi4_config/master/lib/systemd/system/deskpi_pro_fan_control.service -O /lib/systemd/system/deskpi_pro_fan_control.service
 systemctl daemon-reload
 systemctl enable deskpi_pro_fan_control.service
+systemctl start deskpi_pro_fan_control.service

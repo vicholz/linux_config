@@ -27,3 +27,4 @@ chmod a+x /opt/tools/woltool.py
 wget https://raw.githubusercontent.com/vicholz/rpi4_config/master/lib/systemd/system/woltool.service -O /lib/systemd/system/woltool.service
 systemctl daemon-reload
 systemctl enable woltool.service
+systemctl start woltool.service

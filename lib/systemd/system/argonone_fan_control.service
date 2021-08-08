@@ -1,12 +1,12 @@
 [Unit]
-Description=DeskPi Pro Fan Control Daemon
+Description=Argon One Fan Control Daemon
 After=network-online.target
 Wants=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/opt/tools/deskpi_pro_fan_control.py
-ExecStop=/usr/bin/pgrep -f deskpi_pro_fan_control.py | xargs kill -9
+ExecStart=/opt/tools/argon_one_fan_control.py
+ExecStop=/usr/bin/pgrep -f argon_one_fan_control.py | xargs kill -9
 User=pi
 Group=pi
 Restart=always

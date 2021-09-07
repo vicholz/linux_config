@@ -35,8 +35,10 @@ ln -s /usr/share/nginx/modules-available/rtmp-restreamer.conf /etc/nginx/modules
 # add stunnel4 configs
 wget https://raw.githubusercontent.com/vicholz/rtmp_restreamer/master/etc/default/stunnel4 -O /etc/default/stunnel4
 wget https://raw.githubusercontent.com/vicholz/rtmp_restreamer/master/etc/stunnel/stunnel.conf -O /etc/stunnel/stunnel.conf
+mkdir -p /etc/stunnel/conf.d
 wget https://raw.githubusercontent.com/vicholz/rtmp_restreamer/master/etc/stunnel/conf.d/facebook-tunnel.conf -O /etc/stunnel/conf.d/facebook-tunnel.conf
 
 # restart services
+systemctl daemon-reload
 systemctl restart stunnel4; systemctl status stunnel4
 systemctl restart nginx; systemctl status nginx

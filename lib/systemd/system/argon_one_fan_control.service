@@ -13,5 +13,5 @@ Restart=always
 RestartSec=60
 
 [Install]
-Alias=woltool
+Alias=argononefan
 WantedBy=multi-user.target

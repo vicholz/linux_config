@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# get ip
+ip=$(ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}')
+
+# trim ip
+ip_sub=${ip%.*}
+
+# ping all ip's in same mask
+echo "Pinging ${ip_sub}.* to build arp tables..."
+echo ${ip_sub}.{1..254} | xargs -n1 -P0 ping -c1 -t1 2&>1 /dev/null
+echo "Pinging to build arp tables...DONE!"
+echo "Looking for pi..."
+
+# look for mac addresses that match rpi's
+arp -na | grep -i "b8:27:eb\|dc:a6:32"

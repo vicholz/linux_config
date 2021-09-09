@@ -22,7 +22,7 @@ apt -y install \
 
 # add nginxadmin group with permissions to restart
 addgroup nginxadmin
-echo "%nginxadmin ALL=NOPASSWD: /bin/systemctl * nginx" >> /etc/sudoers
+echo "%nginxadmin ALL=NOPASSWD: /bin/systemctl restart nginx, /bin/systemctl start nginx, /bin/systemctl stop nginx" >> /etc/sudoers
 
 # update nginx.service to wait for internet connection before starting
 wget https://raw.githubusercontent.com/vicholz/rtmp_restreamer/master/lib/systemd/system/nginx.service -O /lib/systemd/system/nginx.service

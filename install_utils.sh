@@ -29,7 +29,8 @@ apt -y install \
   screen \
   docker \
   acl \
-  ufw
+  ufw \
+  wakeonlan
 
 # install fortune
 if ! grep -e "/usr/games/fortune" /etc/bash.bashrc 1> /dev/null; then

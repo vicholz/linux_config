@@ -20,7 +20,7 @@ echo "nginx:nginx" | chpasswd
 echo -e "nginx\nginx\n" | smbpasswd -a nginx
 
 # update facl for nginx user
-setfacl -R -m u:nginx:rw /etc/nginx
+setfacl -R -m g:nginx:rw /etc/nginx
 
 # create samba config
 CFG=$(cat <<-END

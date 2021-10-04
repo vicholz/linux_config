@@ -19,6 +19,7 @@ bash <(curl https://raw.githubusercontent.com/vicholz/rpi4_config/main/install_j
 bash <(curl https://raw.githubusercontent.com/vicholz/rpi4_config/main/install_cups.sh)
 bash <(curl https://raw.githubusercontent.com/vicholz/rpi4_config/main/install_rtmp_restreamer.sh)
 bash <(curl https://raw.githubusercontent.com/vicholz/rpi4_config/main/install_nginx_config_monitor.sh)
+bash <(curl https://raw.githubusercontent.com/vicholz/rpi4_config/main/install_nginx_conf_samba.sh)
 bash <(curl https://raw.githubusercontent.com/vicholz/rpi4_config/main/install_docker.sh)
 bash <(curl https://raw.githubusercontent.com/vicholz/rpi4_config/main/install_ha.sh)
 bash <(curl https://raw.githubusercontent.com/vicholz/rpi4_config/main/install_vs_code.sh)

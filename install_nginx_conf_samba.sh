@@ -14,7 +14,7 @@ apt -y install \
     samba
 
 addgroup nginx || true
-useradd nginx
+useradd nginx -g nginx
 addgroup nginx nginx
 echo "nginx:nginx" | chpasswd
 echo -e "nginx\nginx\n" | smbpasswd -a nginx

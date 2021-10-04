@@ -1,0 +1,17 @@
+[Unit]
+Description=Nginx Config Monitor Service
+Requires=nginx.service
+After=nginx.service
+
+[Service]
+Type=simple
+ExecStart=/opt/tools/nginx_config_monitor.sh
+ExecStop=/usr/bin/pgrep -f nginx_config_monitor.py | xargs kill -9
+User=root
+Group=pi
+Restart=always
+RestartSec=10
+
+[Install]
+Alias=nginx_config_monitor
+WantedBy=nginx.service

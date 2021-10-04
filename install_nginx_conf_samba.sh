@@ -31,8 +31,8 @@ CFG=$(cat <<-END
    path = /etc/nginx
    guest ok = no
    read only = no
-   create mask = 0755
-   directory mask = 0755
+   create mask = 0775
+   directory mask = 0775
 
 END
 )

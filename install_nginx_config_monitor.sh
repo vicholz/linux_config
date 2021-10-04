@@ -17,7 +17,7 @@ apt -y install \
 mkdir -p /opt/tools
 
 # install nginx config monitor script
-wget https://raw.githubusercontent.com/vicholz/rpi4_config/master/lib/systemd/system/nginx_config_monitor.service -O /opt/tools/nginx_config_monitor.sh
+wget https://raw.githubusercontent.com/vicholz/rpi4_config/master/tools/nginx_config_monitor.sh -O /opt/tools/nginx_config_monitor.sh
 chmod a+x /opt/tools/nginx_config_monitor.sh
 
 # add nginx_config_monitor.service

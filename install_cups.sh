@@ -33,4 +33,7 @@ unzip /tmp/rollo.zip -d /tmp/rollo
 chmod a+x /tmp/rollo/install.run
 /tmp/rollo/install.run
 
+sudo usermod -a -G lpadmin pi
+sudo cupsctl --remote-admin --remote-any --share-printers
+
 sudo systemctl restart cups

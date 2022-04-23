@@ -43,5 +43,5 @@ END
 )
 
 if ! grep -q "\[media\]" /etc/samba/smb.conf; then
-	echo $CFG >> /etc/samba/smb.conf
+	echo -e $CFG >> /etc/samba/smb.conf
 fi

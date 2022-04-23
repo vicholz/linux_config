@@ -30,7 +30,7 @@ chmod -R 0755 /storage/media
 
 # update minidlna.conf
 cp /etc/minidlna.conf /etc/minidlna.conf.orig
-sed -i "s/media_dir=.*/media_dir=\/storage\/media" /etc/minidlna.conf
+sed -i "s/media_dir=.*/media_dir=\/storage\/media/" /etc/minidlna.conf
 
 CFG=$(cat <<-END
 

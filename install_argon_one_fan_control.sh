@@ -20,11 +20,11 @@ pip3 install pyserial
 mkdir -p /opt/tools
 
 # install fan control script
-wget https://raw.githubusercontent.com/vicholz/rpi4_config/master/tools/argon_one_fan_control.py -O /opt/tools/argon_one_fan_control.py 
-chmod a+x /opt/tools/argon_one_fan_control.py 
+wget https://raw.githubusercontent.com/vicholz/rpi4_config/master/tools/argononed.py -O /opt/tools/argononed.py 
+chmod a+x /opt/tools/argononed.py 
 
 # install service
-wget https://raw.githubusercontent.com/vicholz/rpi4_config/master/lib/systemd/system/argon_one_fan_control.service -O /lib/systemd/system/argon_one_fan_control.service
+wget https://raw.githubusercontent.com/vicholz/rpi4_config/master/lib/systemd/system/argonone.service -O /lib/systemd/system/argonone.service
 systemctl daemon-reload
-systemctl enable argon_one_fan_control.service
-systemctl start argon_one_fan_control.service
+systemctl enable argonone.service
+systemctl start argonone.service

@@ -24,7 +24,7 @@ wget https://raw.githubusercontent.com/vicholz/rpi4_config/master/tools/argonone
 chmod a+x /opt/tools/argononed.py 
 
 # install service
-wget https://raw.githubusercontent.com/vicholz/rpi4_config/master/lib/systemd/system/argonone.service -O /lib/systemd/system/argonone.service
+wget https://raw.githubusercontent.com/vicholz/rpi4_config/master/lib/systemd/system/argon_one.service -O /lib/systemd/system/argon_one.service
 systemctl daemon-reload
 systemctl enable argonone.service
 systemctl start argonone.service

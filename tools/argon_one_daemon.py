@@ -22,7 +22,7 @@ GPIO.setmode(GPIO.BCM)
 SHUTDOWN_PIN=4
 GPIO.setup(SHUTDOWN_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-CONFIG_FILE = "/etc/argon1_config.ini"
+CONFIG_FILE = "/opt/tools/argon_one_config.ini"
 DEFAULT_CONFIG = {
     "fan": {
         "65": "100",

@@ -5,8 +5,8 @@ Wants=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/opt/tools/argononed.py
-ExecStop=/usr/bin/pgrep -f argononed.py | xargs kill -9
+ExecStart=/opt/tools/argon_one_daemon.py
+ExecStop=/usr/bin/pgrep -f argon_one_daemon.py | xargs kill -9
 User=pi
 Group=pi
 Restart=always

@@ -25,5 +25,5 @@ bash <(curl https://raw.githubusercontent.com/vicholz/rpi4_config/main/install_h
 bash <(curl https://raw.githubusercontent.com/vicholz/rpi4_config/main/install_vs_code.sh)
 bash <(curl https://raw.githubusercontent.com/vicholz/rpi4_config/main/install_woltool.sh)
 bash <(curl https://raw.githubusercontent.com/vicholz/rpi4_config/main/install_deskpi_pro_fan_control.sh)
-bash <(curl https://raw.githubusercontent.com/vicholz/rpi4_config/main/install_argon_one_fan_control.sh)
+bash <(curl https://raw.githubusercontent.com/vicholz/rpi4_config/main/install_argon_one_service.sh)
 ```

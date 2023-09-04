@@ -34,9 +34,10 @@ CFG=$(cat <<-END
    directory mask = 2770
    force directory mode = 2770
    force group = scans
+
 END
 )
 
 if ! grep -q "\[scans\]" /etc/samba/smb.conf; then
-	echo -e $CFG >> /etc/samba/smb.conf
+	echo "$CFG" >> /etc/samba/smb.conf
 fi

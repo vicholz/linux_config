@@ -44,9 +44,10 @@ CFG=$(cat <<-END
    directory mask = 2775
    force directory mode = 2775
    force group = media
+
 END
 )
 
 if ! grep -q "\[media\]" /etc/samba/smb.conf; then
-	echo -e $CFG >> /etc/samba/smb.conf
+	echo "$CFG" >> /etc/samba/smb.conf
 fi

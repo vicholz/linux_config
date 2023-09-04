@@ -30,8 +30,10 @@ CFG=$(cat <<-END
    path = /storage/scans
    guest ok = no
    read only = no
-   create mask = 0700
-   directory mask = 0700
+   create mask = 2770
+   directory mask = 2770
+   force directory mode = 2770
+   force group = scans
 END
 )
 

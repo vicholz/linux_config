@@ -40,9 +40,10 @@ CFG=$(cat <<-END
    path = /storage/media
    guest ok = yes
    read only = no
-   create mask = 0755
-   directory mask = 0755
-
+   create mask = 2775
+   directory mask = 2775
+   force directory mode = 2775
+   force group = media
 END
 )
 

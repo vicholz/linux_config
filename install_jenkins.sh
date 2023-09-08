@@ -7,12 +7,10 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 # add jenkins.io key
-wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo gpg --dearmor -o /usr/share/keyrings/jenkins.gpg
 
 # add jenkins.io repo to sources
-if ! grep -q "deb https://pkg.jenkins.io/debian binary/" /etc/apt/sources.list; then
-  echo "deb https://pkg.jenkins.io/debian binary/" >> /etc/apt/sources.list
-fi
+sudo sh -c 'echo deb [signed-by=/usr/share/keyrings/jenkins.gpg] http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 
 # update
 sudo apt update

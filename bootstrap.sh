@@ -15,7 +15,7 @@ apt -y install \
   acl \
   curl \
   dnsutils \
-  docker \
+  docker.io \
   docker-compose \
   dos2unix \
   fortune-mod \

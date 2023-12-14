@@ -60,6 +60,12 @@ apt -y install \
   yq \
   zx \
 
+# install default python venv
+python3 -m venv /home/$SUDO_USER/.venv
+if ! grep -e "source $HOME/.venv/bin/activate" /etc/bash.bashrc 1> /dev/null; then
+	echo "if [ -d $HOME/.venv ] && [ -f $HOME/.venv/bin/activate ]; then source $HOME/.venv/bin/activate; fi" >> /etc/bash.bashrc
+fi
+
 # install fortune
 if ! grep -e "/usr/games/fortune" /etc/bash.bashrc 1> /dev/null; then
 	echo "/usr/games/fortune" >> /etc/bash.bashrc

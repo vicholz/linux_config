@@ -11,13 +11,56 @@ apt update
 
 # install packages
 apt -y install \
+  7zip \
+  acl \
+  curl \
+  dnsutils \
+  docker \
+  docker-compose \
+  dos2unix \
+  fortune-mod \
+  git \
+  gnome-shell-extension-appindicator \
+  gnome-shell-extension-gsconnect \
+  gnome-shell-extension-gsconnect-browsers \
+  gnome-shell-extension-manager \
+  gnome-shell-extension-ubuntu-dock \
+  gnome-shell-extensions \
+  gnome-shell-ubuntu-extensions \
   gnome-tweaks \
-  python3 \
-  python3-pip \
-  yt-dlp \
+  gnome-weather \
   golang \
-  wifite \
+  gparted \
   hcxdumptool \
   hcxkeys \
   hcxtools \
-  git
+  jparse \
+  jq \
+  lrzip \
+  lynx \
+  ntfs-3g \
+  p7zip-full \
+  protontricks \
+  python3 \
+  python3-pip \
+  screen \
+  tldr \
+  transmission \
+  ufw \
+  unace \
+  vim \
+  vlc \
+  wakeonlan \
+  wget \
+  wifite \
+  wine \
+  wine64 \
+  winetricks \
+  yt-dlp \
+  yq \
+  zx \
+
+# install fortune
+if ! grep -e "/usr/games/fortune" /etc/bash.bashrc 1> /dev/null; then
+	echo "/usr/games/fortune" >> /etc/bash.bashrc
+fi

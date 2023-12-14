@@ -12,6 +12,9 @@ bash <(curl $RAW_URL_FOR_SCRIPT)
 ## Commands
 ```bash
 bash <(curl https://raw.githubusercontent.com/vicholz/linux_config/main/bootstrap.sh)
+```
+
+```bash
 bash <(curl https://raw.githubusercontent.com/vicholz/linux_config/main/install_utils.sh)
 bash <(curl https://raw.githubusercontent.com/vicholz/linux_config/main/install_build_tools.sh)
 bash <(curl https://raw.githubusercontent.com/vicholz/linux_config/main/install_scans.sh)

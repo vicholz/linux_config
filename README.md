@@ -11,50 +11,50 @@ bash <(curl $RAW_URL_FOR_SCRIPT)
 ```
 ## Commands
 ```bash
-bash <(curl https://raw.githubusercontent.com/vicholz/linux_config/main/bootstrap.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/bootstrap.sh)
 ```
 ```bash
-bash <(curl https://raw.githubusercontent.com/vicholz/linux_config/main/install_utils.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_utils.sh)
 ```
 ```bash
-bash <(curl https://raw.githubusercontent.com/vicholz/linux_config/main/install_build_tools.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_build_tools.sh)
 ```
 ```bash
-bash <(curl https://raw.githubusercontent.com/vicholz/linux_config/main/install_scans.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_scans.sh)
 ```
 ```bash
-bash <(curl https://raw.githubusercontent.com/vicholz/linux_config/main/install_media.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_media.sh)
 ```
 ```bash
-bash <(curl https://raw.githubusercontent.com/vicholz/linux_config/main/install_jenkins.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_jenkins.sh)
 ```
 ```bash
-bash <(curl https://raw.githubusercontent.com/vicholz/linux_config/main/install_cups.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_cups.sh)
 ```
 ```bash
-bash <(curl https://raw.githubusercontent.com/vicholz/linux_config/main/install_rtmp_restreamer.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_rtmp_restreamer.sh)
 ```
 ```bash
-bash <(curl https://raw.githubusercontent.com/vicholz/linux_config/main/install_nginx_config_monitor.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_nginx_config_monitor.sh)
 ```
 ```bash
-bash <(curl https://raw.githubusercontent.com/vicholz/linux_config/main/install_nginx_conf_samba.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_nginx_conf_samba.sh)
 ```
 ```bash
-bash <(curl https://raw.githubusercontent.com/vicholz/linux_config/main/install_docker.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_docker.sh)
 ```
 ```bash
-bash <(curl https://raw.githubusercontent.com/vicholz/linux_config/main/install_ha.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_ha.sh)
 ```
 ```bash
-bash <(curl https://raw.githubusercontent.com/vicholz/linux_config/main/install_vs_code.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_vs_code.sh)
 ```
 ```bash
-bash <(curl https://raw.githubusercontent.com/vicholz/linux_config/main/install_woltool.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_woltool.sh)
 ```
 ```bash
-bash <(curl https://raw.githubusercontent.com/vicholz/linux_config/main/install_deskpi_pro_fan_control.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_deskpi_pro_fan_control.sh)
 ```
 ```bash
-bash <(curl https://raw.githubusercontent.com/vicholz/linux_config/main/install_argon_one_service.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_argon_one_service.sh)
 ```

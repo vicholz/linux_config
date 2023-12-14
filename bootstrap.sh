@@ -1,16 +1,10 @@
 #!/bin/bash
 
-# check if root user | re-run if not
-if [ "$(id -u)" != "0" ]; then
-	sudo `dirname $0`/`basename $0`
-	exit
-fi
-
 # update
-apt update
+sudo apt update
 
 # install packages
-apt -y install \
+sudo apt -y install \
   7zip \
   acl \
   curl \
@@ -60,13 +54,31 @@ apt -y install \
   yq \
   zx \
 
-# install default python venv
-python3 -m venv /home/$SUDO_USER/.venv
+echo ""
+
+# install default python venv in user home dir
+echo -n "Creating default Python venv in '$HOME/.venv'..."
+if [ ! -d $HOME/.venv ]; then
+  python3 -m venv $HOME/.venv 1> /dev/null
+  echo "DONE!"
+else
+  echo "SKIPPED! Already exists."
+fi
+
+# add default python venv activator to /etc/bash.bashrc
+echo -n "Adding default Python venv activator to '/etc/bash.bashrc'..."
 if ! grep -e "source $HOME/.venv/bin/activate" /etc/bash.bashrc 1> /dev/null; then
-	echo "if [ -d $HOME/.venv ] && [ -f $HOME/.venv/bin/activate ]; then source $HOME/.venv/bin/activate; fi" >> /etc/bash.bashrc
+	echo -e "\nif [ -d $HOME/.venv ] && [ -f $HOME/.venv/bin/activate ]; then source $HOME/.venv/bin/activate; fi\n" | sudo tee -a /etc/bash.bashrc > /dev/null
+  echo "DONE!"
+else
+  echo "SKIPPED! Already exists."
 fi
 
 # install fortune
+echo -n "Adding fortune to '/etc/bash.bashrc'..."
 if ! grep -e "/usr/games/fortune" /etc/bash.bashrc 1> /dev/null; then
-	echo "/usr/games/fortune" >> /etc/bash.bashrc
+	echo -e "\n/usr/games/fortune\n" | sudo tee -a /etc/bash.bashrc > /dev/null
+  echo "DONE!"
+else
+  echo "SKIPPED! Already exists."
 fi

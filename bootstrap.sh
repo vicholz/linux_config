@@ -14,10 +14,14 @@ sudo apt -y install \
   dos2unix \
   fortune-mod \
   git \
+  gnome-shell-extension-alphabetical-grid \
   gnome-shell-extension-appindicator \
+  gnome-shell-extension-desktop-icons-ng \
+  gnome-shell-extension-gpaste \
   gnome-shell-extension-gsconnect \
   gnome-shell-extension-gsconnect-browsers \
   gnome-shell-extension-manager \
+  gnome-shell-extension-prefs \
   gnome-shell-extension-ubuntu-dock \
   gnome-shell-extensions \
   gnome-shell-ubuntu-extensions \

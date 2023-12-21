@@ -77,8 +77,19 @@ fi
 # install fortune
 echo -n "Adding fortune to '/etc/bash.bashrc'..."
 if ! grep -e "/usr/games/fortune" /etc/bash.bashrc 1> /dev/null; then
-	echo -e "\n/usr/games/fortune\n" | sudo tee -a /etc/bash.bashrc > /dev/null
+  echo -e "\n/usr/games/fortune\n" | sudo tee -a /etc/bash.bashrc > /dev/null
   echo "DONE!"
 else
   echo "SKIPPED! Already exists."
+fi
+
+# setup nvidia power management
+if lspci | grep -i "3D controller: NVIDIA" 1> /dev/null; then
+  echo -n "Adding NVIDIA power management config in '/etc/modprobe.d/nvidia-power-management.conf'..."
+  if ! grep "NVreg_PreserveVideoMemoryAllocations=1" /etc/modprobe.d/nvidia-power-management.conf 1> /dev/null; then
+    echo "options nvidia NVreg_PreserveVideoMemoryAllocations=1 NVreg_TemporaryFilePath=/var/tmp" >> /etc/modprobe.d/nvidia-power-management.conf
+    echo "DONE!"
+  else
+    echo "SKIPPED! Already exists."
+  fi
 fi

@@ -27,7 +27,7 @@ apt -y install \
   dnsutils \
   vim \
   screen \
-  docker \
+  docker.io \
   acl \
   ufw \
   wakeonlan

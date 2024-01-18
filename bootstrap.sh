@@ -72,7 +72,16 @@ fi
 # add default python venv activator to /etc/bash.bashrc
 echo -n "Adding default Python venv activator to '/etc/bash.bashrc'..."
 if ! grep -e "source $HOME/.venv/bin/activate" /etc/bash.bashrc 1> /dev/null; then
-	echo -e "\nif [ -d $HOME/.venv ] && [ -f $HOME/.venv/bin/activate ]; then source $HOME/.venv/bin/activate; fi\n" | sudo tee -a /etc/bash.bashrc > /dev/null
+	echo -e "\nif [ -d \$HOME/.venv ] && [ -f \$HOME/.venv/bin/activate ]; then\n\tsource \$HOME/.venv/bin/activate\nfi\n" | sudo tee -a /etc/bash.bashrc > /dev/null
+  echo "DONE!"
+else
+  echo "SKIPPED! Already exists."
+fi
+
+# add user bin path to /etc/bash.bashrc
+echo -n "Adding \$HOME/bin export to PATH in '/etc/bash.bashrc'..."
+if ! grep -e "export PATH=\$HOME/bin:\$PATH" /etc/bash.bashrc 1> /dev/null; then
+	echo -e "\nif [ -d \$HOME/bin ]; then\n\texport PATH=\$HOME/bin:\$PATH\nfi\n" | sudo tee -a /etc/bash.bashrc > /dev/null
   echo "DONE!"
 else
   echo "SKIPPED! Already exists."

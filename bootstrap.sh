@@ -23,6 +23,7 @@ sudo apt -y install \
   gnome-shell-extension-manager \
   gnome-shell-extension-prefs \
   gnome-shell-extension-ubuntu-dock \
+  gnome-shell-extension-ubuntu-tiling-assistant \
   gnome-shell-extensions \
   gnome-shell-ubuntu-extensions \
   gnome-tweaks \

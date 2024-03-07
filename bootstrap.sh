@@ -33,6 +33,7 @@ sudo apt -y install \
   hcxdumptool \
   hcxkeys \
   hcxtools \
+  iat \
   jparse \
   jq \
   lrzip \
@@ -40,6 +41,7 @@ sudo apt -y install \
   ntfs-3g \
   p7zip-full \
   protontricks \
+  pv \
   python3 \
   python3-pip \
   screen \

@@ -12,6 +12,7 @@ sudo apt -y install \
   docker.io \
   docker-compose \
   dos2unix \
+  flatpak \
   fortune-mod \
   git \
   gnome-shell-extension-alphabetical-grid \

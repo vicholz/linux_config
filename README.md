@@ -20,6 +20,9 @@ bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/insta
 bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_build_tools.sh)
 ```
 ```bash
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_steam_big_picture_xsession.sh)
+```
+```bash
 bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_scans.sh)
 ```
 ```bash

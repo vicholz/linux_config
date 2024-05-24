@@ -37,6 +37,7 @@ sudo apt -y install \
   iat \
   jparse \
   jq \
+  libfuse2 \
   lrzip \
   lynx \
   ntfs-3g \

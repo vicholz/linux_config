@@ -122,6 +122,7 @@ echo -n "Adding 'pbcopy' and 'pbpaste' aliases to '/etc/bash.bashrc'..."
 if ! grep -e "alias pbcopy='xclip -selection clipboard'" /etc/bash.bashrc 1> /dev/null; then
   echo -e "alias pbcopy='xclip -selection clipboard'" | sudo tee -a /etc/bash.bashrc > /dev/null
   echo -e "alias pbpaste='xclip -selection clipboard -o'" | sudo tee -a /etc/bash.bashrc > /dev/null
+  echo "DONE!"
 else
   echo "SKIPPED! Already exists."
 fi

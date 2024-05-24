@@ -78,14 +78,6 @@ pip3 install \
 gnome-extensions-cli \
 --break-system-packages \
 
-# install Gnome extensions
-gnome-extensions-cli -F install burn-my-windows@schneegans.github.com || true
-gnome-extensions-cli -F install display-brightness-ddcutil@themightydeity.github.com || true
-gnome-extensions-cli -F install allowlockedremotedesktop@kamens.us || true
-gnome-extensions-cli -F install caffeine@patapon.info || true
-gnome-extensions-cli -F install just-perfection-desktop@just-perfection || true
-gnome-extensions-cli -F install azwallpaper@azwallpaper.gitlab.com || true
-
 # restrict unprivileged userns to allow chrome based AppImages to run without specifying --no-sandbox
 echo -e "Removing restriction for unpriviledged user namespaces in AppImages..."
 echo -e "kernel.apparmor_restrict_unprivileged_userns=0\n" | sudo tee /etc/sysctl.d/99-unrestrict_unprivileged_userns.conf > /dev/null 
@@ -146,3 +138,16 @@ if lspci | grep -i "3D controller: NVIDIA" 1> /dev/null; then
     echo "SKIPPED! Already exists."
   fi
 fi
+
+# reloading bash profile
+source /etc/bash.bashrc
+
+# install Gnome extensions
+gnome-extensions-cli -F install burn-my-windows@schneegans.github.com || true
+gnome-extensions-cli -F install display-brightness-ddcutil@themightydeity.github.com || true
+gnome-extensions-cli -F install allowlockedremotedesktop@kamens.us || true
+gnome-extensions-cli -F install caffeine@patapon.info || true
+gnome-extensions-cli -F install just-perfection-desktop@just-perfection || true
+gnome-extensions-cli -F install azwallpaper@azwallpaper.gitlab.com || true
+
+echo -e "\nDONE!"

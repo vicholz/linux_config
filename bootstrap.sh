@@ -87,7 +87,7 @@ gnome-extensions-cli -F install azwallpaper@azwallpaper.gitlab.com || true
 
 # restrict unprivileged userns to allow chrome based AppImages to run without specifying --no-sandbox
 echo -e "Removing restriction for unpriviledged user namespaces in AppImages..."
-echo "kernel.apparmor_restrict_unprivileged_userns=0" > /etc/sysctl.d/99-unrestrict_unprivileged_userns.conf
+echo -e "kernel.apparmor_restrict_unprivileged_userns=0\n" | sudo tee /etc/sysctl.d/99-unrestrict_unprivileged_userns.conf > /dev/null 
 
 # install default python venv in user home dir
 echo -n "Creating default Python venv in '$HOME/.venv'..."

@@ -64,6 +64,7 @@ sudo apt -y install \
   wine64 \
   winetricks \
   xclip \
+  xrdp \
   yt-dlp \
   yq \
   zenity \

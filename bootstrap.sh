@@ -62,6 +62,7 @@ sudo apt -y install \
   wine \
   wine64 \
   winetricks \
+  xclip \
   yt-dlp \
   yq \
   zenity \
@@ -69,7 +70,14 @@ sudo apt -y install \
 
 echo ""
 
+# install python packages globally
+echo -n "Installing global python packages..."
+pip3 install \
+gnome-extensions-cli \
+--break-system-packages \
+
 # restrict unprivileged userns to allow chrome based AppImages to run without specifying --no-sandbox
+echo -e "Removing restriction for unpriviledged user namespaces in AppImages..."
 echo "kernel.apparmor_restrict_unprivileged_userns=0" > /etc/sysctl.d/99-unrestrict_unprivileged_userns.conf
 
 # install default python venv in user home dir
@@ -90,11 +98,20 @@ else
   echo "SKIPPED! Already exists."
 fi
 
-# add user bin path to /etc/bash.bashrc
-echo -n "Adding \$HOME/bin export to PATH in '/etc/bash.bashrc'..."
-if ! grep -e "export PATH=\$HOME/bin:\$PATH" /etc/bash.bashrc 1> /dev/null; then
-	echo -e "\nif [ -d \$HOME/bin ]; then\n\texport PATH=\$HOME/bin:\$PATH\nfi\n" | sudo tee -a /etc/bash.bashrc > /dev/null
+# add $HOME/.local/bin path to /etc/bash.bashrc
+echo -n "Adding '\$HOME/.local/bin' export to PATH in '/etc/bash.bashrc'..."
+if ! grep -e "export PATH=\$HOME/.local/bin:\$PATH" /etc/bash.bashrc 1> /dev/null; then
+	echo -e "export PATH=\$HOME/.local/bin:\$PATH\n" | sudo tee -a /etc/bash.bashrc > /dev/null
   echo "DONE!"
+else
+  echo "SKIPPED! Already exists."
+fi
+
+# add pbcopy and pbpaste aliases
+echo -n "Adding 'pbcopy' and 'pbpaste' aliases to '/etc/bash.bashrc'..."
+if ! grep -e "alias pbcopy='xclip -selection clipboard'" /etc/bash.bashrc 1> /dev/null; then
+  echo -e "alias pbcopy='xclip -selection clipboard'" | sudo tee -a /etc/bash.bashrc > /dev/null
+  echo -e "alias pbpaste='xclip -selection clipboard -o'" | sudo tee -a /etc/bash.bashrc > /dev/null
 else
   echo "SKIPPED! Already exists."
 fi

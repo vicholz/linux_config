@@ -9,6 +9,7 @@ sudo apt -y install \
   acl \
   bash \
   curl \
+  ddcutil \
   dnsutils \
   docker.io \
   docker-compose \
@@ -75,6 +76,14 @@ echo -n "Installing global python packages..."
 pip3 install \
 gnome-extensions-cli \
 --break-system-packages \
+
+# install Gnome extensions
+gnome-extensions-cli -F install burn-my-windows@schneegans.github.com || true
+gnome-extensions-cli -F install display-brightness-ddcutil@themightydeity.github.com || true
+gnome-extensions-cli -F install allowlockedremotedesktop@kamens.us || true
+gnome-extensions-cli -F install caffeine@patapon.info || true
+gnome-extensions-cli -F install just-perfection-desktop@just-perfection || true
+gnome-extensions-cli -F install azwallpaper@azwallpaper.gitlab.com || true
 
 # restrict unprivileged userns to allow chrome based AppImages to run without specifying --no-sandbox
 echo -e "Removing restriction for unpriviledged user namespaces in AppImages..."

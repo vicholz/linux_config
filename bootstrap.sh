@@ -7,6 +7,7 @@ sudo apt update
 sudo apt -y install \
   7zip \
   acl \
+  bash \
   curl \
   dnsutils \
   docker.io \
@@ -46,11 +47,13 @@ sudo apt -y install \
   pv \
   python3 \
   python3-pip \
+  rsync \
   screen \
   tldr \
   transmission \
   ufw \
   unace \
+  unzip \
   vim \
   vlc \
   wakeonlan \
@@ -61,9 +64,13 @@ sudo apt -y install \
   winetricks \
   yt-dlp \
   yq \
+  zenity \
   zx \
 
 echo ""
+
+# restrict unprivileged userns to allow chrome based AppImages to run without specifying --no-sandbox
+echo "kernel.apparmor_restrict_unprivileged_userns=0" > /etc/sysctl.d/99-unrestrict_unprivileged_userns.conf
 
 # install default python venv in user home dir
 echo -n "Creating default Python venv in '$HOME/.venv'..."

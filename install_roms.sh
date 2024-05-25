@@ -34,5 +34,7 @@ END
 )
 
 if ! grep -q "\[media\]" /etc/samba/smb.conf; then
-	echo "$CFG" | sudo tee -a /etc/samba/smb.conf
+	echo "$CFG" | sudo tee -a /etc/samba/smb.conf > /dev/null
 fi
+
+sudo systemctl restart smbd

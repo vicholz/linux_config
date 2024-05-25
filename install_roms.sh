@@ -21,7 +21,7 @@ addgroup roms || true
 useradd roms
 addgroup $USER roms
 echo "roms:roms" | chpasswd
-echo -e "roms\roms\n" | smbpasswd -a roms
+echo -e "roms\nroms\n" | smbpasswd -a roms
 mkdir -p /storage/roms
 chown -R roms:roms /storage/roms
 chmod -R 0755 /storage/roms

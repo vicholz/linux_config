@@ -140,9 +140,12 @@ if lspci | grep -i "3D controller: NVIDIA" 1> /dev/null; then
 fi
 
 # reloading bash profile
-source /etc/bash.bashrc
+echo -n "Reloading bash profile from /etc/bash.bashrc..."
+. /etc/bash.bashrc
+echo "DONE!"
 
 # install Gnome extensions
+export PATH=$HOME/.local/bin:$PATH
 gnome-extensions-cli -F install burn-my-windows@schneegans.github.com || true
 gnome-extensions-cli -F install display-brightness-ddcutil@themightydeity.github.com || true
 gnome-extensions-cli -F install allowlockedremotedesktop@kamens.us || true

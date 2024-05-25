@@ -1,24 +1,30 @@
 #!/bin/bash
 
+# check if root user | re-run if not
+if [ "$(id -u)" != "0" ]; then
+	sudo `dirname $0`/`basename $0`
+	exit
+fi
+
 # update
-sudo apt update
+apt update
 
 # upgrade existing
-sudo apt upgrade -y
+apt upgrade -y
 
 # install packages
-sudo apt -y install \
+apt -y install \
     samba \
     samba-client \
 
-sudo addgroup roms || true
-sudo useradd roms
-sudo addgroup $USER roms
-sudo echo "roms:roms" | chpasswd
-sudo echo -e "roms\roms\n" | smbpasswd -a roms
-sudo mkdir -p /storage/roms
-sudo chown -R roms:roms /storage/roms
-sudo chmod -R 0755 /storage/roms
+addgroup roms || true
+useradd roms
+addgroup $USER roms
+echo "roms:roms" | chpasswd
+echo -e "roms\roms\n" | smbpasswd -a roms
+mkdir -p /storage/roms
+chown -R roms:roms /storage/roms
+chmod -R 0755 /storage/roms
 
 CFG=$(cat <<-END
 
@@ -37,5 +43,5 @@ END
 )
 
 if ! grep -q "\[media\]" /etc/samba/smb.conf; then
-	sudo echo "$CFG" >> /etc/samba/smb.conf
+	echo "$CFG" >> /etc/samba/smb.conf
 fi

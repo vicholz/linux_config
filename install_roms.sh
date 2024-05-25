@@ -34,5 +34,5 @@ END
 )
 
 if ! grep -q "\[media\]" /etc/samba/smb.conf; then
-	sudo echo "$CFG" >> /etc/samba/smb.conf
+	echo "$CFG" | sudo tee -a /etc/samba/smb.conf
 fi

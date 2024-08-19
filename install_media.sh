@@ -21,12 +21,12 @@ apt -y install \
 
 addgroup storage || true
 useradd media
-addgroup media storage
+usermod -a media -G storage
 echo "media:media" | chpasswd
 echo -e "media\nmedia\n" | smbpasswd -a media
 mkdir -p /storage/media
 chown -R media:media /storage/media
-chmod -R 0755 /storage/media
+chmod -R 2755 /storage/media
 
 # update minidlna.conf
 cp /etc/minidlna.conf /etc/minidlna.conf.orig

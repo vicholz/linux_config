@@ -16,7 +16,7 @@ apt -y install \
 
 addgroup storage || true
 useradd scans
-addgroup scans storage
+usermod -a scans -G storage
 echo "scans:scans" | chpasswd
 echo -e "scans\nscans\n" | smbpasswd -a scans
 mkdir -p /storage/scans

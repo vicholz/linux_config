@@ -149,7 +149,7 @@ export PATH=$HOME/.local/bin:$PATH
 gnome-extensions-cli -F install burn-my-windows@schneegans.github.com || true
 gnome-extensions-cli -F install display-brightness-ddcutil@themightydeity.github.com || true
 gnome-extensions-cli -F install allowlockedremotedesktop@kamens.us || true
-gnome-extensions-cli -F install caffeine@patapon.info || true
+gnome-extensions-cli -F install espresso@coadmunkee.github.com || true
 gnome-extensions-cli -F install just-perfection-desktop@just-perfection || true
 gnome-extensions-cli -F install azwallpaper@azwallpaper.gitlab.com || true
 

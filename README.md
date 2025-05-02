@@ -11,56 +11,59 @@ bash <(curl $RAW_URL_FOR_SCRIPT)
 ```
 ## Commands
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/bootstrap.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/fedora_bootstrap.sh)
 ```
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_utils.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/ubuntu_bootstrap.sh)
 ```
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_build_tools.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/apt_install_utils.sh)
 ```
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_steam_big_picture_xsession.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/apt_install_build_tools.sh)
 ```
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_roms.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/apt_install_steam_big_picture_xsession.sh)
 ```
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_scans.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/apt_install_roms.sh)
 ```
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_media.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/apt_install_scans.sh)
 ```
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_jenkins.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/apt_install_media.sh)
 ```
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_cups.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/apt_install_jenkins.sh)
 ```
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_rtmp_restreamer.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/apt_install_cups.sh)
 ```
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_nginx_config_monitor.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/apt_install_rtmp_restreamer.sh)
 ```
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_nginx_conf_samba.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/apt_install_nginx_config_monitor.sh)
+```
+```bash
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/apt_install_nginx_conf_samba.sh)
 ```
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_docker.sh)
 ```
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_ha.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/apt_install_ha.sh)
 ```
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_vs_code.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/apt_install_vs_code.sh)
 ```
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_woltool.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/apt_install_woltool.sh)
 ```
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_deskpi_pro_fan_control.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/apt_install_deskpi_pro_fan_control.sh)
 ```
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/install_argon_one_service.sh)
+bash <(curl -s https://raw.githubusercontent.com/vicholz/linux_config/main/apt_install_argon_one_service.sh)
 ```

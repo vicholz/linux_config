@@ -78,6 +78,9 @@ pip3 install \
 gnome-extensions-cli \
 --break-system-packages \
 
+# create user bashrc.d
+mkdir -p $HOME/.bashrc.d
+
 # restrict unprivileged userns to allow chrome based AppImages to run without specifying --no-sandbox
 echo -e "Removing restriction for unpriviledged user namespaces in AppImages..."
 echo -e "kernel.apparmor_restrict_unprivileged_userns=0\n" | sudo tee /etc/sysctl.d/99-unrestrict_unprivileged_userns.conf > /dev/null 
@@ -92,41 +95,20 @@ else
 fi
 
 # add default python venv activator to /etc/bash.bashrc
-echo -n "Adding default Python venv activator to '/etc/bash.bashrc'..."
-if ! grep -e "source $HOME/.venv/bin/activate" /etc/bash.bashrc 1> /dev/null; then
-	echo -e "\nif [ -d \$HOME/.venv ] && [ -f \$HOME/.venv/bin/activate ]; then\n\tsource \$HOME/.venv/bin/activate\nfi\n" | sudo tee -a /etc/bash.bashrc > /dev/null
-  echo "DONE!"
-else
-  echo "SKIPPED! Already exists."
-fi
-
-# add $HOME/.local/bin path to /etc/bash.bashrc
-echo -n "Adding '\$HOME/.local/bin' export to PATH in '/etc/bash.bashrc'..."
-if ! grep -e "export PATH=\$HOME/.local/bin:\$PATH" /etc/bash.bashrc 1> /dev/null; then
-	echo -e "export PATH=\$HOME/.local/bin:\$PATH\n" | sudo tee -a /etc/bash.bashrc > /dev/null
-  echo "DONE!"
-else
-  echo "SKIPPED! Already exists."
-fi
+echo -n "Adding default Python venv activator to '\$HOME/.bashrc.d/python_env.bash'..."
+echo "source \$HOME/.venv/bin/activate" > $HOME/.bashrc.d/python_env.bash
+echo "DONE!"
 
 # add pbcopy and pbpaste aliases
-echo -n "Adding 'pbcopy' and 'pbpaste' aliases to '/etc/bash.bashrc'..."
-if ! grep -e "alias pbcopy='xclip -selection clipboard'" /etc/bash.bashrc 1> /dev/null; then
-  echo -e "alias pbcopy='xclip -selection clipboard'" | sudo tee -a /etc/bash.bashrc > /dev/null
-  echo -e "alias pbpaste='xclip -selection clipboard -o'" | sudo tee -a /etc/bash.bashrc > /dev/null
-  echo "DONE!"
-else
-  echo "SKIPPED! Already exists."
-fi
+echo -n "Adding 'pbcopy' and 'pbpaste' aliases to '\$HOME/.bashrc.d/pb_aliases.bash'..."
+echo -e "alias pbcopy=\"xclip -selection clipboard\"" > $HOME/.bashrc.d/pb_aliases.bash
+echo -e "alias pbpaste=\"xclip -selection clipboard -o\"" >> $HOME/.bashrc.d/pb_aliases.bash
+echo "DONE!"
 
 # install fortune
-echo -n "Adding fortune to '/etc/bash.bashrc'..."
-if ! grep -e "/usr/games/fortune" /etc/bash.bashrc 1> /dev/null; then
-  echo -e "\n/usr/games/fortune\n" | sudo tee -a /etc/bash.bashrc > /dev/null
-  echo "DONE!"
-else
-  echo "SKIPPED! Already exists."
-fi
+echo -n "Adding fortune to '\$HOME/.bashrc.d/fortune.bash'..."
+echo -e "/usr/games/fortune" > $HOME/.bashrc.d/fortune.bash
+echo "DONE!"
 
 # setup nvidia power management
 if lspci | grep -i "3D controller: NVIDIA" 1> /dev/null; then
@@ -139,18 +121,5 @@ if lspci | grep -i "3D controller: NVIDIA" 1> /dev/null; then
   fi
 fi
 
-# reloading bash profile
-echo -n "Reloading bash profile from /etc/bash.bashrc..."
-. /etc/bash.bashrc
-echo "DONE!"
-
-# install Gnome extensions
-export PATH=$HOME/.local/bin:$PATH
-gnome-extensions-cli -F install burn-my-windows@schneegans.github.com || true
-gnome-extensions-cli -F install display-brightness-ddcutil@themightydeity.github.com || true
-gnome-extensions-cli -F install allowlockedremotedesktop@kamens.us || true
-gnome-extensions-cli -F install espresso@coadmunkee.github.com || true
-gnome-extensions-cli -F install just-perfection-desktop@just-perfection || true
-gnome-extensions-cli -F install azwallpaper@azwallpaper.gitlab.com || true
-
-echo -e "\nDONE!"
+echo -e "\nDONE!\n"
+echo "Please restart your terminal for changes to take effect."

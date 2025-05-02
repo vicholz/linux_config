@@ -6,12 +6,5 @@ if [ "$(id -u)" != "0" ]; then
 	exit
 fi
 
-# update
-sudo apt update
-
-# install docker related packages
-sudo apt install -y \
-	docker-compose
-
 # install docker
 curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh

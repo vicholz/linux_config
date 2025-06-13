@@ -11,26 +11,13 @@ sudo apt -y install \
   curl \
   ddcutil \
   dnsutils \
-  docker.io \
   docker-compose \
+  docker.io \
   dos2unix \
   flatpak \
   fortune-mod \
+  fprintd \
   git \
-#  gnome-shell-extension-alphabetical-grid \
-#  gnome-shell-extension-appindicator \
-#  gnome-shell-extension-desktop-icons-ng \
-#  gnome-shell-extension-gpaste \
-#  gnome-shell-extension-gsconnect \
-#  gnome-shell-extension-gsconnect-browsers \
-#  gnome-shell-extension-manager \
-#  gnome-shell-extension-prefs \
-#  gnome-shell-extension-ubuntu-dock \
-#  gnome-shell-extension-ubuntu-tiling-assistant \
-#  gnome-shell-extensions \
-#  gnome-shell-ubuntu-extensions \
-#  gnome-tweaks \
-#  gnome-weather \
   golang \
   gparted \
   hcxdumptool \
@@ -40,6 +27,7 @@ sudo apt -y install \
   jparse \
   jq \
   libfuse2 \
+  libpam-fprintd \
   lrzip \
   lynx \
   ntfs-3g \
@@ -65,18 +53,12 @@ sudo apt -y install \
   winetricks \
   xclip \
   xrdp \
-  yt-dlp \
   yq \
+  yt-dlp \
   zenity \
-  zx \
+  zx
 
 echo ""
-
-# install python packages globally
-# echo -n "Installing global python packages..."
-# pip3 install \
-# gnome-extensions-cli \
-# --break-system-packages \
 
 # create user bashrc.d
 mkdir -p $HOME/.bashrc.d

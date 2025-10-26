@@ -38,11 +38,11 @@ sudo apt -y install \
   python3-pip \
   rsync \
   screen \
-  tldr \
   transmission \
   ufw \
   unace \
   unzip \
+  verse \
   vim \
   vlc \
   wakeonlan \
@@ -76,6 +76,12 @@ else
   echo "SKIPPED! Already exists."
 fi
 
+# Install Google Chrome repo
+wget -qO - https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor | sudo tee /etc/apt/keyrings/google-chrome.gpg
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
+apt update
+apt install google-chrome-stable
+
 # add default python venv activator to /etc/bash.bashrc
 echo -n "Adding default Python venv activator to '\$HOME/.bashrc.d/python_env.bash'..."
 echo "source \$HOME/.venv/bin/activate" > $HOME/.bashrc.d/python_env.bash
@@ -87,10 +93,26 @@ echo -e "alias pbcopy=\"xclip -selection clipboard\"" > $HOME/.bashrc.d/pb_alias
 echo -e "alias pbpaste=\"xclip -selection clipboard -o\"" >> $HOME/.bashrc.d/pb_aliases.bash
 echo "DONE!"
 
-# install fortune
-echo -n "Adding fortune to '\$HOME/.bashrc.d/fortune.bash'..."
-echo -e "/usr/games/fortune" > $HOME/.bashrc.d/fortune.bash
+# install verse
+echo -n "Adding verse to '\$HOME/.bashrc.d/verse.bash'..."
+echo -e "/usr/bin/verse" > $HOME/.bashrc.d/verse.bash
 echo "DONE!"
+
+# add $HOME/.bashrc.d/*.bash loader
+if ! grep "\$HOME/.bashrc.d" /etc/bash.bashrc > /dev/null; then
+CFG=$(cat <<-END
+
+if [ -d \$HOME/.bashrc.d ]; then
+        for f in \$(ls \$HOME/.bashrc.d); do
+                . \$HOME/.bashrc.d/\$f
+        done
+fi
+
+END
+)
+  echo -n "Adding loader for '\$HOME/.bashrc.d/*.bash' files..."
+  echo "$CFG" >> /etc/bash.bashrc
+fi
 
 # setup nvidia power management
 if lspci | grep -i "3D controller: NVIDIA" 1> /dev/null; then

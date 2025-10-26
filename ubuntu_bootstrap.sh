@@ -30,6 +30,7 @@ sudo apt -y install \
   libpam-fprintd \
   lrzip \
   lynx \
+  network-manager-openvpn \
   ntfs-3g \
   p7zip-full \
   protontricks \

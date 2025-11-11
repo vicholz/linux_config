@@ -65,8 +65,8 @@ echo ""
 mkdir -p $HOME/.bashrc.d
 
 # restrict unprivileged userns to allow chrome based AppImages to run without specifying --no-sandbox
-echo -e "Removing restriction for unpriviledged user namespaces in AppImages..."
-echo -e "kernel.apparmor_restrict_unprivileged_userns=0\n" | sudo tee /etc/sysctl.d/99-unrestrict_unprivileged_userns.conf > /dev/null 
+# echo -e "Removing restriction for unpriviledged user namespaces in AppImages..."
+# echo -e "kernel.apparmor_restrict_unprivileged_userns=0\n" | sudo tee /etc/sysctl.d/99-unrestrict_unprivileged_userns.conf > /dev/null 
 
 # install default python venv in user home dir
 echo -n "Creating default Python venv in '$HOME/.venv'..."
@@ -116,15 +116,15 @@ END
 fi
 
 # setup nvidia power management
-if lspci | grep -i "3D controller: NVIDIA" 1> /dev/null; then
-  echo -n "Adding NVIDIA power management config in '/etc/modprobe.d/nvidia-power-management.conf'..."
-  if ! grep "NVreg_PreserveVideoMemoryAllocations=1" /etc/modprobe.d/nvidia-power-management.conf 1> /dev/null; then
-    echo "options nvidia NVreg_PreserveVideoMemoryAllocations=1 NVreg_TemporaryFilePath=/var/tmp" >> /etc/modprobe.d/nvidia-power-management.conf
-    echo "DONE!"
-  else
-    echo "SKIPPED! Already exists."
-  fi
-fi
+# if lspci | grep -i "3D controller: NVIDIA" 1> /dev/null; then
+#   echo -n "Adding NVIDIA power management config in '/etc/modprobe.d/nvidia-power-management.conf'..."
+#   if ! grep "NVreg_PreserveVideoMemoryAllocations=1" /etc/modprobe.d/nvidia-power-management.conf 1> /dev/null; then
+#     echo "options nvidia NVreg_PreserveVideoMemoryAllocations=1 NVreg_TemporaryFilePath=/var/tmp" >> /etc/modprobe.d/nvidia-power-management.conf
+#     echo "DONE!"
+#   else
+#     echo "SKIPPED! Already exists."
+#   fi
+# fi
 
 echo -e "\nDONE!\n"
 echo "Please restart your terminal for changes to take effect."

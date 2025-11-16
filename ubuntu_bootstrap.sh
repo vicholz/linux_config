@@ -61,6 +61,9 @@ sudo apt -y install \
 
 echo ""
 
+# install flatpal store
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
 # create user bashrc.d
 mkdir -p $HOME/.bashrc.d
 

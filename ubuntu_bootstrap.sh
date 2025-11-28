@@ -116,7 +116,7 @@ fi
 END
 )
   echo -n "Adding loader for '\$HOME/.bashrc.d/*.bash' files..."
-  echo "$CFG" > | sudo tee -a /etc/bash.bashrc > /dev/null
+  echo "$CFG" | sudo tee -a /etc/bash.bashrc > /dev/null
 fi
 
 # setup nvidia power management

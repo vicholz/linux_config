@@ -37,6 +37,7 @@ sudo apt -y install \
   pv \
   python3 \
   python3-pip \
+  python3.13-venv \
   rsync \
   screen \
   transmission \

@@ -82,9 +82,9 @@ fi
 
 # Install Google Chrome repo
 wget -qO - https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor | sudo tee /etc/apt/keyrings/google-chrome.gpg > /dev/null
-echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
-apt update
-apt install google-chrome-stable
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list > /dev/null
+sudo apt update
+sudo apt install google-chrome-stable
 
 # add default python venv activator to /etc/bash.bashrc
 echo -n "Adding default Python venv activator to '\$HOME/.bashrc.d/python_env.bash'..."

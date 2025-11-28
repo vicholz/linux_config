@@ -82,7 +82,7 @@ fi
 
 # Install Google Chrome repo
 wget -qO - https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor | sudo tee /etc/apt/keyrings/google-chrome.gpg > /dev/null
-sudo echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list
 apt update
 apt install google-chrome-stable
 
@@ -129,5 +129,5 @@ fi
 #   fi
 # fi
 
-echo -e "\nDONE!\n"
+echo -e "DONE!"
 echo "Please restart your terminal for changes to take effect."
